@@ -1,2 +1,2 @@
-# Subscription-Manager
+# Subscription-Tracker
 HackDuke 2017
