@@ -39,21 +39,25 @@ class TableRow extends React.Component {
       <div class= "sub-details">
         <div class = "first-row">
           <span class="text-left">{this.props.subEntryProp.title}</span>
+          <span class="text-right">{'$ ' + this.props.subEntryProp.value}</span>
           <span>
             <button
-              class="text-right"
+              //class="text-right"
+              class="EditButton"
               onClick={() => this.props.onShowModalProp(true, subId)}>
               Edit
             </button>
           </span>
-          <span class="text-right">{'$ ' + this.props.subEntryProp.value}</span>
+
         </div>
         <br/>
+
         <div class="second-row">
           <span class="text-left">{this.props.subEntryProp.description}</span>
           <span>
             <button
               class="text-right"
+              class="DeleteButton"
               onClick={()=>this.props.onRemoveProp(subId)}>
               Delete
             </button>

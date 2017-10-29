@@ -1,10 +1,9 @@
 .sub-details {
-  font-size: 20px;
-  background-color: lightblue;
-  width: 600px;
+  font-size: 15px;
+  background-color: #8ba0ed;
+  width: 46%;
   padding: 10px 35px 30px 35px;
-  margin-left: 200px;
-
+  margin-left: 25%;
   margin-bottom: 20px;
 }
 /*
@@ -21,13 +20,41 @@ img {
 
 }
 
+.EditButton {
+  height:20px;
+  width:50px;
+  position:fixed;
+  left:70%;
+  color: #6f85d6;
+}
+.DeleteButton {
+  height:20px;
+  width:50px;
+  position:fixed;
+  left:70%;
+  color: #6f85d6;
+}
+.addButton {
+    height:30px;
+    width:80px;
+    position:relative;
+    top:50%;
+    left:48%;
+    color: #d66f6f;
+}
+
 .text-left {
   float:left
 }
 
 .text-right {
-  float:right
+   position:fixed;
+   right:32%;
 }
+/*.text-right1 {
+  position:fixed;
+  left:710px;
+}*/
 
 .text-middle {
   position: center,

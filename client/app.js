@@ -77,6 +77,7 @@ class SubscriptionTracker extends React.Component {
         />
       );
     }
+
     return (
       <div>
         <SubscriptionTable
@@ -84,12 +85,13 @@ class SubscriptionTracker extends React.Component {
           onRemoveProp={this.remove}
           onShowModalProp={this.showModal}
         />
-        <button onClick={() => this.showModal(false, null)}>
+        <button class="addButton" onClick={() => this.showModal(false, null)} >
           Add
         </button>
       </div>
     );
   }
+
 }
 
 tracker.load();
