@@ -19,6 +19,17 @@ img {
 .second-row{
 
 }
+.EditPage {
+  text-align: center;
+  font-size: 20px;
+  line-height: 2em;
+  margin-top: 10%;
+}
+.row {
+  margin-left: 2%;
+  margin-right: 5%;
+
+}
 .summary {
   text-align: center;
   margin-top: 20px;
@@ -26,7 +37,6 @@ img {
 .title {
   text-align: center;
   font-size: 25px;
-
 }
 .EditButton {
   height:20px;

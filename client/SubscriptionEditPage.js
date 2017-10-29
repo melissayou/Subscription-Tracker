@@ -72,26 +72,33 @@ class SubscriptionEditPage extends React.Component {
     }
 
     return (
-      <div>
+      <div className="EditPage">
         <div>
-          Title:
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.updateTitle} />
-          <br/>
+          <div className="row">
+            Title:
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.updateTitle} />
+            <br/>
+          </div>
+          <div className="row">
           Description:
           <input
             type="text"
             value={this.state.description}
             onChange={this.updateDescription} />
           <br/>
+          </div>
+          <div className="row">
           Value:
           <input
             type="text"
             value={this.state.value}
             onChange={this.updateValue} />
           <br/>
+          </div>
+          <div className="row">
           Frequency:
           <select value={this.state.frequency} onChange={this.updateFrequency}>
             <option value={FREQUENCY.DAILY}>DAILY</option>
@@ -101,6 +108,7 @@ class SubscriptionEditPage extends React.Component {
             <option value={FREQUENCY.YEARLY}>YEARLY</option>
           </select>
           <br/>
+          </div>
         </div>
         <button onClick={this.onSave}>
           {this.props.isEditProp ? 'Save' : 'Create'}
