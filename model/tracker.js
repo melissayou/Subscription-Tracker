@@ -49,10 +49,9 @@ const tracker = {
   },
 
   getMonthlyPay() {
-    return
-      _.reduce(this.subscriptions, (sum, sub) => {
-        return sum + sub.value * FREQUENCY.getMultiplier(sub.frequency);
-      }, 0);
+    return _.reduce(this.subscriptions, (sum, sub) => {
+      return sum + sub.value * FREQUENCY.getMultiplier(sub.frequency);
+    }, 0);
   },
 
   load() {

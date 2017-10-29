@@ -50,8 +50,8 @@ class SubscriptionTracker extends React.Component {
   showModal(isEdit, subId) {
     this.setState({
       isShown: true,
-      isEdit: isEdit,
-      subId: subId,
+      isEdit,
+      subId,
     });
   }
 
@@ -60,7 +60,7 @@ class SubscriptionTracker extends React.Component {
       isShown: false,
       isEdit: false,
       subId: null,
-    })
+    });
   }
 
 
@@ -80,18 +80,21 @@ class SubscriptionTracker extends React.Component {
 
     return (
       <div>
+        <h1 className="title">Subscription Tracker</h1>
         <SubscriptionTable
           subProp={this.state.subscriptions}
           onRemoveProp={this.remove}
           onShowModalProp={this.showModal}
         />
-        <button class="addButton" onClick={() => this.showModal(false, null)} >
+        <button className="addButton" onClick={() => this.showModal(false, null)} >
           Add
         </button>
+        <div className="summary">
+          YOUR MONTHLY PAYMENT: ${tracker.getMonthlyPay()}
+        </div>
       </div>
     );
   }
-
 }
 
 tracker.load();

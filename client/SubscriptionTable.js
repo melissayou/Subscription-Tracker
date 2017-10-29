@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-//import style from '../public/style.css';
-//import Modal from './Modal.js';
 
 class SubscriptionTable extends React.Component {
   render() {
@@ -39,7 +37,7 @@ class TableRow extends React.Component {
       <div class= "sub-details">
         <div class = "first-row">
           <span class="text-left">{this.props.subEntryProp.title}</span>
-          <span class="text-right">{'$ ' + this.props.subEntryProp.value}</span>
+          <span class="text-right">{'$' + this.props.subEntryProp.value}</span>
           <span>
             <button
               //class="text-right"

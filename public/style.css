@@ -19,7 +19,15 @@ img {
 .second-row{
 
 }
+.summary {
+  text-align: center;
+  margin-top: 20px;
+}
+.title {
+  text-align: center;
+  font-size: 25px;
 
+}
 .EditButton {
   height:20px;
   width:50px;
