@@ -1,10 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
+import tracker from '../model/tracker';
+import subscription from '../model/subscription';
+import FREQUENCY from '../model/frequency';
 
 class SubscriptionTracker extends React.Component {
   render() {
-    return (<div>Hi</div>);
+    // const sub = subscription.create('a', 'd', 12, FREQUENCY.MONTHLY);
+    // tracker.add(sub);
+    return (<div>{tracker.subscriptions.length}</div>);
   }
 }
 
-render(<SubscriptionTracker />, document.getElementById('reactRoot'))
+tracker.load();
+render(<SubscriptionTracker />, document.getElementById('reactRoot'));

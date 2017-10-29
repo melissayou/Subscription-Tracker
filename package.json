@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "lodash": "^4.17.4",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -32,6 +33,11 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "webpack": "^3.8.1"
   }
 }
