@@ -7,7 +7,7 @@ const subscription = {
       id: tracker.getProvisionalId(),
       title: title || 'Click edit to add a title',
       description: description || '',
-      value: value || 0,
+      value: isNaN(value) ? 0 : value,
       frequency:
         FREQUENCY.isValid(frequency) ? frequency : FREQUENCY.MONTHLY,
     };

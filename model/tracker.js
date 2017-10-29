@@ -1,12 +1,17 @@
 import _ from 'lodash';
+import FREQUENCY from './frequency';
 
 const tracker = {
   subscriptions: [],
 
+  save() {
+    localStorage.setItem('subscriptions', JSON.stringify(this.subscriptions));
+  },
+
   add(newSub) {
     if (newSub) {
       this.subscriptions.push(newSub);
-      localStorage.setItem('subscriptions', JSON.stringify(this.subscriptions));
+      this.save();
     } else {
       console.log('Error adding new subscription: ', newSub);
     }
@@ -16,17 +21,36 @@ const tracker = {
     return _.find(this.subscriptions, sub => sub.id == id);
   },
 
+  edit(id, title, description, value, frequency) {
+    const sub = this.get(id);
+    if (sub) {
+      sub.title = title || 'Click edit to add a title';
+      sub.description = description || '';
+      sub.value = isNaN(value) ? 0 : value;
+      sub.frequency = FREQUENCY.isValid(frequency)
+        ? frequency
+        : FREQUENCY.MONTHLY;
+      this.save();
+    } else {
+      console.log('Error editing existing subscription: ', sub);
+    }
+  },
+
   remove(id) {
     _.remove(this.subscriptions, sub => sub.id == id);
+    this.save();
   },
 
   getProvisionalId() {
-    return this.subscriptions.length + 1;
+    const maxId = _.reduce(this.subscriptions, (max, sub) => {
+      return max > sub.id ? max : sub.id
+    }, -1);
+    return maxId + 1;
   },
 
   load() {
-    this.subscriptions = JSON.parse(localStorage.getItem('subscriptions'));
-    console.log(this.subscriptions);
+    this.subscriptions =
+      JSON.parse(localStorage.getItem('subscriptions')) || [];
   },
 };
 
