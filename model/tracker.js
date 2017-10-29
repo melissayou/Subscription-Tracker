@@ -48,6 +48,13 @@ const tracker = {
     return maxId + 1;
   },
 
+  getMonthlyPay() {
+    return
+      _.reduce(this.subscriptions, (sum, sub) => {
+        return sum + sub.value * FREQUENCY.getMultiplier(sub.frequency);
+      }, 0);
+  },
+
   load() {
     this.subscriptions =
       JSON.parse(localStorage.getItem('subscriptions')) || [];

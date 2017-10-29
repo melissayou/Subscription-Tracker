@@ -10,6 +10,16 @@ const FREQUENCY = {
     ];
     return values.includes(f);
   },
+  getMultiplier(f) {
+    const m = {
+      DAILY: 30,
+      WEEKLY: 4.2,
+      MONTHLY: 1,
+      QUARTERLY: 1/3,
+      YEARLY: 1/12,
+    }
+    return m[f];
+  },
 };
 
 export default FREQUENCY;
