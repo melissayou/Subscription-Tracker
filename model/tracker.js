@@ -26,7 +26,7 @@ const tracker = {
     if (sub) {
       sub.title = title || 'Click edit to add a title';
       sub.description = description || '';
-      sub.value = isNaN(value) ? 0 : value;
+      sub.value = isNaN(value) ? 0 : (value > 0 ? value : 0);
       sub.frequency = FREQUENCY.isValid(frequency)
         ? frequency
         : FREQUENCY.MONTHLY;

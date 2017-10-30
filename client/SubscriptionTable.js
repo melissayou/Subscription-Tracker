@@ -21,16 +21,12 @@ class SubscriptionTable extends React.Component {
         </div>
       );
     }
-    return <div>No Subscriptions</div>;
+    return <div className="noSub">No Subscriptions</div>;
   }
 }
 
 
 class TableRow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     const subId = this.props.subEntryProp.id;
     return (
@@ -40,7 +36,6 @@ class TableRow extends React.Component {
           <span class="text-right">{'$' + this.props.subEntryProp.value}</span>
           <span>
             <button
-              //class="text-right"
               class="EditButton"
               onClick={() => this.props.onShowModalProp(true, subId)}>
               Edit
@@ -67,13 +62,13 @@ class TableRow extends React.Component {
   }
 }
 
-SubscriptionTable.propTypes ={
+SubscriptionTable.propTypes = {
   subProp: PropTypes.array.isRequired,
   onRemoveProp: PropTypes.func.isRequired,
   onShowModalProp: PropTypes.func.isRequired,
 };
 
-TableRow.propTypes ={
+TableRow.propTypes = {
   subEntryProp: PropTypes.object.isRequired,
   onRemoveProp: PropTypes.func.isRequired,
   onShowModalProp: PropTypes.func.isRequired,
